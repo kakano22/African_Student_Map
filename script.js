@@ -14,7 +14,7 @@ async function getData(url) {
   return response.json();
 }
 
-const data = await getData('/data/student_data.json');
+const data = await getData('/African_Student_Map/data/student_data.json');
 console.log(data);
 
 
