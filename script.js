@@ -8,7 +8,14 @@ L.tileLayer(
   "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 ).addTo(map);
 
+async function getData(url) {
+  const response = await fetch(url);
 
+  return response.json();
+}
+
+const data = await getData('/data/student_data.json');
+console.log(data);
 
 
 //L.tileLayer.wms('https://maps.georeferencer.com/georeferences/71e4cdad-3140-5b47-8a08-514c206a844d/2022-12-23T23:48:40.740996Z/wmts?key=uL98Wi1mpNUAHIlUUqE6', {}).addTo(map);
