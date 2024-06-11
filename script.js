@@ -8,15 +8,18 @@ L.tileLayer(
   "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 ).addTo(map);
 
-let data;    
 fetch('/African_Student_Map/data/student_data.json').then(
         function(u){ return u.json();}
       ).then(
         function(json){
           data = json;
+          L.geoJSON(data, {
+            onEachFeature: function (feature, layer) {
+              layer.bindPopup('<h1>'+feature.properties["name"] + '</h1>');
+            }
+          }).addTo(map);
         }
       )
-console.log(data);
 
 
 //L.tileLayer.wms('https://maps.georeferencer.com/georeferences/71e4cdad-3140-5b47-8a08-514c206a844d/2022-12-23T23:48:40.740996Z/wmts?key=uL98Wi1mpNUAHIlUUqE6', {}).addTo(map);
