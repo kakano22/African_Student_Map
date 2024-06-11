@@ -8,13 +8,14 @@ L.tileLayer(
   "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 ).addTo(map);
 
-async function getData(url) {
-  const response = await fetch(url);
-
-  return response.json();
-}
-
-const data = await getData('/African_Student_Map/data/student_data.json');
+let data;    
+fetch('/African_Student_Map/data/student_data.json').then(
+        function(u){ return u.json();}
+      ).then(
+        function(json){
+          data = json;
+        }
+      )
 console.log(data);
 
 
