@@ -31,8 +31,11 @@ fetch('/African_Student_Map/data/student_data.json').then(
           }
           // for each pair, add a polyLine between the two points
           pairs.forEach(function(pair){
-            var polyline = L.polyline([pair[0].geometry.coordinates, pair[1].geometry.coordinates], {color: 'blue'});
-            polyline.addTo(map);
+            if (pair[0] && pair[1]) {
+              var polyline = L.polyline([pair[0].geometry.coordinates, pair[1].geometry.coordinates], {color: 'blue'});
+              polyline.addTo(map);
+            }
+            
           });
         }
       )
