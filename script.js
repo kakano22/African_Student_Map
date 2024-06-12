@@ -15,6 +15,8 @@ fetch('/African_Student_Map/data/student_data.json').then(
           data = json;
           let dataLayer = L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
+              let name = feature.properties.name;
+
               if (feature.properties["residence_africa_city"]){
                 layer.bindPopup('<h4>'+feature.properties["name"] + '</h4><br>'+feature.properties["residence_africa_city"] +", "+feature.properties["residence_africa_country"])
               } else {
@@ -22,13 +24,10 @@ fetch('/African_Student_Map/data/student_data.json').then(
               }
             }
           }).addTo(map);	
-          var markersLayer = new L.LayerGroup();	//layer contain searched elements
-	
-          map.addLayer(markersLayer);
-
+          
           var controlSearch = new L.Control.Search({
             position:'topright',		
-            layer: markersLayer,
+            layer: dataLayer,
             initial: false,
             zoom: 12,
             marker: false
@@ -36,20 +35,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
 
           map.addControl( controlSearch );
 
-          ////////////populate map with markers from sample data
-          for(i in data) {
-            for (f in data.features) {
-              var title = data[i].features[f].properties.name,	//value searched 
-              loc = data[i].features[f].geometry.coordinates,		//position found
-              marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
-            }
-            var title = data[i].title,	//value searched
-              loc = data[i].loc,		//position found
-              marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
-            marker.bindPopup('title: '+ title );
-            markersLayer.addLayer(marker);
-          }
-
+      
           // // group the points in data in pairs of two
           // var pairs = [];
           // for (var i = 0; i < data.length; i++) {
