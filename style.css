@@ -1,0 +1,13 @@
+/* a minimalist set of CSS resets */
+
+html, body {
+  height: 100%;
+  width: 100vw;
+}
+
+#map {
+  margin-top: 3em;
+  margin-right: 3em;
+  margin-left: 2em;
+  height: 100%;
+}
