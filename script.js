@@ -22,9 +22,18 @@ fetch('/African_Student_Map/data/student_data.json').then(
               }
             }
           }).addTo(map);
-          for (i in data) {
-            console.log(i, data[i]);
+          // group the points in data in pairs of two
+          var pairs = [];
+          for (var i = 0; i < data.features.length; i++) {
+            if (i % 2 == 0) {
+              pairs.push([data.features[i], data.features[i + 1]]);
+            }
           }
+          // for each pair, add a polyLine between the two points
+          pairs.forEach(function(pair){
+            var polyline = L.polyline([pair[0].geometry.coordinates, pair[1].geometry.coordinates], {color: 'blue'});
+            polyline.addTo(map);
+          });
         }
       )
 
