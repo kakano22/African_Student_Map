@@ -13,10 +13,8 @@ fetch('/African_Student_Map/data/student_data.json').then(
       ).then(
         function(json){
           data = json;
-          let dataLayer = L.geoJSON(data, {
+          let dataLayers = L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
-              let name = feature.properties.name;
-
               if (feature.properties["residence_africa_city"]){
                 layer.bindPopup('<h4>'+feature.properties["name"] + '</h4><br>'+feature.properties["residence_africa_city"] +", "+feature.properties["residence_africa_country"])
               } else {
@@ -25,16 +23,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
             }
           }).addTo(map);	
           
-          var controlSearch = new L.Control.Search({
-            position:'topright',		
-            layer: dataLayer,
-            initial: false,
-            zoom: 12,
-            marker: false
-          });
-
-          map.addControl( controlSearch );
-
+          console.log(dataLayers)
       
           // // group the points in data in pairs of two
           // var pairs = [];
