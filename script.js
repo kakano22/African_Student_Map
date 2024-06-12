@@ -31,15 +31,12 @@ fetch('/African_Student_Map/data/student_data.json').then(
               pairs.push([data[i], data[i + 1]]);
             }
           }
-          console.log(pairs)
-          //for each pair, add a polyLine between the two points
-          // pairs.forEach(function(pair){
-          //   if (pair[0].geometry.coordinates && pair[1].geometry.coordinates) {
-          //     var polyline = L.polyline([pair[0].geometry.coordinates, pair[1].geometry.coordinates], {color: 'blue'});
-          //     polyline.addTo(map);
-          //   }
-            
-          // });
+          //for each pair, add a polyLine between the two points, skip the last pair
+          for (i in pairs) {
+            if (i < pairs.length - 1) {
+              var line = L.polyline([pairs[i][0],pairs[i][1]], {color: 'green'}).addTo(map);
+            }
+          }
         }
       )
 
@@ -73,10 +70,5 @@ noUiSlider.create(slider, {
     },
     format: wNumb({
       decimals: 0
-    }),
-    pips: {
-      mode: 'steps',
-      stepped: true,
-      density: 100
-    } 
+    })
 });
