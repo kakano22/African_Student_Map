@@ -22,7 +22,19 @@ fetch('/African_Student_Map/data/student_data.json').then(
               }
             }
           }).addTo(map);
-          map.addControl( new L.Control.Search({layer: dataLayer}) );
+          var markersLayer = new L.LayerGroup();	//layer contain searched elements
+	
+	        map.addLayer(markersLayer);
+
+          var controlSearch = new L.Control.Search({
+            position:'topright',		
+            layer: markersLayer,
+            initial: false,
+            zoom: 12,
+            marker: false
+          });
+
+          map.addControl( controlSearch );
 
           // // group the points in data in pairs of two
           // var pairs = [];
