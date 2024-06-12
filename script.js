@@ -33,7 +33,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
           let dataLayers = L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
               if (feature.properties["residence_africa_city"]){
-                layer.bindPopup('<h4>'+feature.properties["name"] + '</h4><br>'+feature.properties["residence_africa_city"] +", "+feature.properties["residence_africa_country"] + "<br><img src='/African_Student_Map/images/" + feature.properties["id"] + ".png' width='200' height='150' />");
+                layer.bindPopup('<h4>'+feature.properties["name"] + '</h4><br>'+feature.properties["residence_africa_city"] +", "+feature.properties["residence_africa_country"] + "<br><img src='/African_Student_Map/assets/images/" + feature.properties["id"] + ".png' width='200' height='150' />");
               } else {
                 layer.bindPopup('<h4>'+feature.properties["name"] + '</h4><br>' +feature.properties["residence_africa_country"]);
               }
