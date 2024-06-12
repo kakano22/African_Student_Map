@@ -13,7 +13,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
       ).then(
         function(json){
           data = json;
-          L.geoJSON(data, {
+          let dataLayer = L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
               if (feature.properties["residence_africa_city"]){
                 layer.bindPopup('<h4>'+feature.properties["name"] + '</h4><br>'+feature.properties["residence_africa_city"] +", "+feature.properties["residence_africa_country"])
@@ -22,6 +22,8 @@ fetch('/African_Student_Map/data/student_data.json').then(
               }
             }
           }).addTo(map);
+          map.addControl( new L.Control.Search({layer: dataLayer}) );
+
           // group the points in data in pairs of two
           var pairs = [];
           for (var i = 0; i < data.length; i++) {
@@ -51,9 +53,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
 //    url: "http://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer"
 //  }).addTo(map);
 
-let searchLayer = L.layerGroup().addTo(map);
 //... adding data in searchLayer ...
-map.addControl( new L.Control.Search({layer: searchLayer}) );
 //searchLayer is a L.LayerGroup contains searched markers
 
 // Date Slider 
