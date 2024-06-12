@@ -40,7 +40,10 @@ fetch('/African_Student_Map/data/student_data.json').then(
             }
           }).addTo(map);	
           
-          
+          var markers = L.markerClusterGroup();
+		      markers.addLayer(dataLayers);
+		      map.addLayer(markers);
+
           // group the points in data in pairs of two
           var pairs = [];
           for (var i = 0; i < data.length; i++) {
