@@ -17,8 +17,8 @@ L.tileLayer(
 ).addTo(map);
 
 // add Africa map
-let imageUrl = '/African_Student_Map/Africa Maps_Bond Collection_cropped.jpg',
-    imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+let imageUrl = '/African_Student_Map/images/00023.png',
+    imageBounds = [[40.712216, -74.22655]];
 L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 fetch('/African_Student_Map/data/student_data.json').then(
