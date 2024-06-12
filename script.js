@@ -51,6 +51,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
               pairs.push([data[i], data[i + 1]]);
             }
           }
+          console.log(pairs)
           //for each pair, add a polyLine between the two points, skip the last pair
           for (i in pairs) {
             if (i < pairs.length - 1) {
