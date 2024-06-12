@@ -20,14 +20,6 @@ var imageUrl = 'https://maps.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
     imageBounds = [[30.712216, -64.22655]];
 L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
-var latlngs = [
-  [45.51, -122.68],
-  [37.77, -122.43],
-  [34.04, -118.2]
-];
-
-var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
-
 // add Africa map
 let imageUrl1 = '/African_Student_Map/images/Africa Maps_Bond Collection_cropped.jpg',
     imageBounds1 = [[40.712216, -74.22655], [40.773941, -74.12544]];
@@ -48,21 +40,28 @@ fetch('/African_Student_Map/data/student_data.json').then(
             }
           }).addTo(map);	
           
-          console.log(slider.get())
-      
-          // // group the points in data in pairs of two
-          // var pairs = [];
-          // for (var i = 0; i < data.length; i++) {
-          //   if (i % 2 == 0) {
-          //     pairs.push([data[i], data[i + 1]]);
-          //   }
-          // }
-          // //for each pair, add a polyLine between the two points, skip the last pair
-          // for (i in pairs) {
-          //   if (i < pairs.length - 1) {
-          //     var line = L.polyline([pairs[i][0],pairs[i][1]], {color: 'green'}).addTo(map);
-          //   }
-          // }
+          
+          // group the points in data in pairs of two
+          var pairs = [];
+          for (var i = 0; i < data.length; i++) {
+            if (i % 2 == 0) {
+              pairs.push([data[i], data[i + 1]]);
+            }
+          }
+          //for each pair, add a polyLine between the two points, skip the last pair
+          for (i in pairs) {
+            if (i < pairs.length - 1) {
+              let latlang0 = pairs[i][0].geometry.coordinates;
+              let latlang1 = pairs[i][1].geometry.coordinates;
+              var latlngs = [
+                [latlang0[1], latlang0[0]],
+                [latlang1[1], latlang1[0]],
+              ];
+              
+              let polyline = L.polyline(latlngs, {color: 'green'}).addTo(map);
+              
+            }
+          }
         }
       )
 
