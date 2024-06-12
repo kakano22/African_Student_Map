@@ -8,29 +8,15 @@ L.tileLayer(
   "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 ).addTo(map);
 
+// add Africa map
+let imageUrl = '/African_Student_Map/Africa Maps_Bond Collection_cropped.jpg',
+    imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
 fetch('/African_Student_Map/data/student_data.json').then(
         function(u){ return u.json();}
       ).then(
         function(json){
-          // Date Slider 
-          // https://refreshless.com/nouislider/
-          var sliderDiv = document.getElementById('slider');
-
-          let slider = noUiSlider.create(sliderDiv, {
-              start: [1848, 1960],
-              step: 1,
-              connect: true,
-              behaviour: 'tap-drag',
-              tooltips: true,
-              range: {
-                  'min': 1848,
-                  'max': 1960
-              },
-              format: wNumb({
-                decimals: 0
-              })
-          });
-
           data = json;
           let dataLayers = L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
@@ -74,3 +60,21 @@ fetch('/African_Student_Map/data/student_data.json').then(
 //... adding data in searchLayer ...
 //searchLayer is a L.LayerGroup contains searched markers
 
+ // Date Slider 
+// https://refreshless.com/nouislider/
+var sliderDiv = document.getElementById('slider');
+
+let slider = noUiSlider.create(sliderDiv, {
+    start: [1848, 1960],
+    step: 1,
+    connect: true,
+    behaviour: 'tap-drag',
+    tooltips: true,
+    range: {
+        'min': 1848,
+        'max': 1960
+    },
+    format: wNumb({
+      decimals: 0
+    })
+});
