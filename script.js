@@ -70,9 +70,6 @@ noUiSlider.create(slider, {
         'min': 1848,
         'max': 1960
     },
-    format: wNumb({
-      decimals: 0
-    }),
     pips: {
       mode: 'steps',
       stepped: true,
