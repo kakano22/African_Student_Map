@@ -30,8 +30,8 @@ var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
 
 // add Africa map
 let imageUrl1 = '/African_Student_Map/images/Africa Maps_Bond Collection_cropped.jpg',
-    imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
-L.imageOverlay(imageUrl1, imageBounds).addTo(map);
+    imageBounds1 = [[40.712216, -74.22655], [40.773941, -74.12544]];
+L.imageOverlay(imageUrl1, imageBounds1).addTo(map);
 
 fetch('/African_Student_Map/data/student_data.json').then(
         function(u){ return u.json();}
