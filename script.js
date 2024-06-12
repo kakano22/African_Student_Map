@@ -46,9 +46,11 @@ fetch('/African_Student_Map/data/student_data.json').then(
 
           for (i in data) {
             let person = data[i];
-            point0 = person.features[0].geometry.coordinates;
-            point1 = person.features[1].geometry.coordinates;
-            let polyLine = L.polyline([point0, point1], {color: "green", weight: 1});
+            point0_lat = person.features[0].geometry.coordinates[1];
+            point0_lon = person.features[0].geometry.coordinates[0];
+            point1_lat = person.features[1].geometry.coordinates[1];
+            point1_lon = person.features[1].geometry.coordinates[0];
+            let polyLine = L.polyline([[point0_lat,point0_lon], [point1_lat,point1_lon]], {color: "green", weight: 1});
             polyLine.addTo(map);
           }
         }
