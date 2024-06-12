@@ -22,15 +22,33 @@ fetch('/African_Student_Map/data/student_data.json').then(
               }
             }
           }).addTo(map);	
+          var markersLayer = new L.LayerGroup();	//layer contain searched elements
+	
+          map.addLayer(markersLayer);
+
           var controlSearch = new L.Control.Search({
             position:'topright',		
-            layer: dataLayer,
+            layer: markersLayer,
             initial: false,
             zoom: 12,
             marker: false
           });
 
           map.addControl( controlSearch );
+
+          ////////////populate map with markers from sample data
+          for(i in data) {
+            for (f in data.features) {
+              var title = data[i].features[f].properties.name,	//value searched 
+              loc = data[i].features[f].geometry.coordinates,		//position found
+              marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
+            }
+            var title = data[i].title,	//value searched
+              loc = data[i].loc,		//position found
+              marker = new L.Marker(new L.latLng(loc), {title: title} );//se property searched
+            marker.bindPopup('title: '+ title );
+            markersLayer.addLayer(marker);
+          }
 
           // // group the points in data in pairs of two
           // var pairs = [];
