@@ -20,10 +20,18 @@ var imageUrl = 'https://maps.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
     imageBounds = [[30.712216, -64.22655]];
 L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
+var latlngs = [
+  [45.51, -122.68],
+  [37.77, -122.43],
+  [34.04, -118.2]
+];
+
+var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+
 // add Africa map
-let imageUrl = '/African_Student_Map/images/Africa Maps_Bond Collection_cropped.jpg',
+let imageUrl1 = '/African_Student_Map/images/Africa Maps_Bond Collection_cropped.jpg',
     imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
-L.imageOverlay(imageUrl, imageBounds).addTo(map);
+L.imageOverlay(imageUrl1, imageBounds).addTo(map);
 
 fetch('/African_Student_Map/data/student_data.json').then(
         function(u){ return u.json();}
