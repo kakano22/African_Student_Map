@@ -31,14 +31,14 @@ fetch('/African_Student_Map/data/student_data.json').then(
               pairs.push([data[i], data[i + 1]]);
             }
           }
-          // for each pair, add a polyLine between the two points
-          // pairs.forEach(function(pair){
-          //   if (pair[0] && pair[1]) {
-          //     var polyline = L.polyline([pair[0].geometry.coordinates, pair[1].geometry.coordinates], {color: 'blue'});
-          //     polyline.addTo(map);
-          //   }
+          //for each pair, add a polyLine between the two points
+          pairs.forEach(function(pair){
+            if (pair[0].geometry.coordinates && pair[1].geometry.coordinates) {
+              var polyline = L.polyline([pair[0].geometry.coordinates, pair[1].geometry.coordinates], {color: 'blue'});
+              polyline.addTo(map);
+            }
             
-          // });
+          });
         }
       )
 
@@ -70,9 +70,12 @@ noUiSlider.create(slider, {
         'min': 1848,
         'max': 1960
     },
+    format: wNumb({
+      decimals: 0
+    }),
     pips: {
       mode: 'steps',
       stepped: true,
-      density: 10
+      density: 100
     } 
 });
