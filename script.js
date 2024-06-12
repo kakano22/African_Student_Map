@@ -16,9 +16,13 @@ L.tileLayer(
   "https://mapwarper.net/maps/tile/83043/{z}/{x}/{y}.png"
 ).addTo(map);
 
+var imageUrl = 'https://maps.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+    imageBounds = [[30.712216, -64.22655]];
+L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
 // add Africa map
-let imageUrl = '/African_Student_Map/images/00023.png',
-    imageBounds = [[40.712216, -74.22655]];
+let imageUrl = '/African_Student_Map/images/Africa Maps_Bond Collection_cropped.jpg',
+    imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
 L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
 fetch('/African_Student_Map/data/student_data.json').then(
