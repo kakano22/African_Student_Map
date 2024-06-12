@@ -1,6 +1,6 @@
 // Create a base map object 
 //https://leafletjs.com/reference.html#map
-let map = L.map('map').setView([11.511488663931049, 18.89112567449333], 2.5); 
+let map = L.map('map').setView([26.455343409890208, -38.99551264526797], 2.5); 
 
 // Add a base layer to the map 
 // https://leafletjs.com/reference.html#tilelayer
