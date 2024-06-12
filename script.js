@@ -24,19 +24,19 @@ fetch('/African_Student_Map/data/student_data.json').then(
           }).addTo(map);
           map.addControl( new L.Control.Search({layer: dataLayer}) );
 
-          // group the points in data in pairs of two
-          var pairs = [];
-          for (var i = 0; i < data.length; i++) {
-            if (i % 2 == 0) {
-              pairs.push([data[i], data[i + 1]]);
-            }
-          }
-          //for each pair, add a polyLine between the two points, skip the last pair
-          for (i in pairs) {
-            if (i < pairs.length - 1) {
-              var line = L.polyline([pairs[i][0],pairs[i][1]], {color: 'green'}).addTo(map);
-            }
-          }
+          // // group the points in data in pairs of two
+          // var pairs = [];
+          // for (var i = 0; i < data.length; i++) {
+          //   if (i % 2 == 0) {
+          //     pairs.push([data[i], data[i + 1]]);
+          //   }
+          // }
+          // //for each pair, add a polyLine between the two points, skip the last pair
+          // for (i in pairs) {
+          //   if (i < pairs.length - 1) {
+          //     var line = L.polyline([pairs[i][0],pairs[i][1]], {color: 'green'}).addTo(map);
+          //   }
+          // }
         }
       )
 
