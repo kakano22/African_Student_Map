@@ -21,14 +21,10 @@ fetch('/African_Student_Map/data/student_data.json').then(
                 layer.bindPopup('<h4>'+feature.properties["name"] + '</h4><br>' +feature.properties["residence_africa_country"]);
               }
             }
-          }).addTo(map);
-          var markersLayer = new L.LayerGroup();	//layer contain searched elements
-	
-	        map.addLayer(markersLayer);
-
+          }).addTo(map);	
           var controlSearch = new L.Control.Search({
             position:'topright',		
-            layer: markersLayer,
+            layer: dataLayer,
             initial: false,
             zoom: 12,
             marker: false
