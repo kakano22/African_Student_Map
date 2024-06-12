@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+      "institution_1":"Lincoln University",
+      "name":"Zokufa, Jeremiah B.",
+      "education record_start":"1901",
+      "education record_end":"1908",
+      "residence_africa_city":"Alice",
+      "residence_africa_country":"South Africa"},
+      "geometry": {
+        "coordinates": [
+          26.834793564425553,
+          -32.78811734082979
+        ],
+        "type": "Point"
+      }
+    }, {
+      "type": "Feature",
+      "properties": {
+      "institution_1":"Lincoln University",
+      "name":"Zokufa, Jeremiah B.",
+      "education record_start":"1901",
+      "education record_end":"1908",
+      "residence_africa_city":"Alice",
+      "residence_africa_country":"South Africa"},
+      "geometry": {
+        "coordinates": [
+          26.834793564425553,
+          -32.78811734082979
+        ],
+        "type": "Point"
+      }
+    },
+  ]
+}
