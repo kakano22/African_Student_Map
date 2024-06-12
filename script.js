@@ -12,6 +12,25 @@ fetch('/African_Student_Map/data/student_data.json').then(
         function(u){ return u.json();}
       ).then(
         function(json){
+          // Date Slider 
+          // https://refreshless.com/nouislider/
+          var sliderDiv = document.getElementById('slider');
+
+          let slider = noUiSlider.create(sliderDiv, {
+              start: [1848, 1960],
+              step: 1,
+              connect: true,
+              behaviour: 'tap-drag',
+              tooltips: true,
+              range: {
+                  'min': 1848,
+                  'max': 1960
+              },
+              format: wNumb({
+                decimals: 0
+              })
+          });
+
           data = json;
           let dataLayers = L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
@@ -23,7 +42,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
             }
           }).addTo(map);	
           
-          console.log(dataLayers)
+          console.log(slider.get())
       
           // // group the points in data in pairs of two
           // var pairs = [];
@@ -55,21 +74,3 @@ fetch('/African_Student_Map/data/student_data.json').then(
 //... adding data in searchLayer ...
 //searchLayer is a L.LayerGroup contains searched markers
 
-// Date Slider 
-// https://refreshless.com/nouislider/
-var slider = document.getElementById('slider');
-
-noUiSlider.create(slider, {
-    start: [1848, 1960],
-    step: 1,
-    connect: true,
-    behaviour: 'tap-drag',
-    tooltips: true,
-    range: {
-        'min': 1848,
-        'max': 1960
-    },
-    format: wNumb({
-      decimals: 0
-    })
-});
