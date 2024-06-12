@@ -53,19 +53,19 @@ fetch('/African_Student_Map/data/student_data.json').then(
           }
           console.log(pairs)
           //for each pair, add a polyLine between the two points, skip the last pair
-          for (i in pairs) {
-            if (i < pairs.length - 1) {
-              let latlang0 = pairs[i][0].geometry.coordinates;
-              let latlang1 = pairs[i][1].geometry.coordinates;
-              var latlngs = [
-                [latlang0[1], latlang0[0]],
-                [latlang1[1], latlang1[0]],
-              ];
+          // for (i in pairs) {
+          //   if (i < pairs.length - 1) {
+          //     let latlang0 = pairs[i][0].geometry.coordinates;
+          //     let latlang1 = pairs[i][1].geometry.coordinates;
+          //     var latlngs = [
+          //       [latlang0[1], latlang0[0]],
+          //       [latlang1[1], latlang1[0]],
+          //     ];
               
-              let polyline = L.polyline(latlngs, {color: 'green'}).addTo(map);
+          //     let polyline = L.polyline(latlngs, {color: 'green'}).addTo(map);
               
-            }
-          }
+          //   }
+          // }
         }
       )
 
