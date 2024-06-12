@@ -24,7 +24,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
           }).addTo(map);
           // group the points in data in pairs of two
           var pairs = [];
-          for (var i = 0; i < data.features.length; i++) {
+          for (var i = 0; i < data.length; i++) {
             if (i % 2 == 0) {
               pairs.push([data.features[i], data.features[i + 1]]);
             }
@@ -48,7 +48,7 @@ fetch('/African_Student_Map/data/student_data.json').then(
 //    url: "http://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer"
 //  }).addTo(map);
 
-  var searchLayer = L.layerGroup().addTo(map);
+let searchLayer = L.layerGroup().addTo(map);
 //... adding data in searchLayer ...
 map.addControl( new L.Control.Search({layer: searchLayer}) );
 //searchLayer is a L.LayerGroup contains searched markers
