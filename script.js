@@ -44,28 +44,13 @@ fetch('/African_Student_Map/data/student_data.json').then(
 		      markers.addLayer(dataLayers);
 		      map.addLayer(markers);
 
-          // group the points in data in pairs of two
-          var pairs = [];
-          for (var i = 0; i < data.length; i++) {
-            if (i % 2 == 0) {
-              pairs.push([data[i], data[i + 1]]);
-            }
+          for (i in data) {
+            let person = data[i];
+            point0 = person.features[0].geometry.coordinates;
+            point1 = person.features[1].geometry.coordinates;
+            let polyLine = L.polyline([point0, point1], {color: "green", weight: 1});
+            polyLine.addTo(map);
           }
-          console.log(pairs)
-          //for each pair, add a polyLine between the two points, skip the last pair
-          // for (i in pairs) {
-          //   if (i < pairs.length - 1) {
-          //     let latlang0 = pairs[i][0].geometry.coordinates;
-          //     let latlang1 = pairs[i][1].geometry.coordinates;
-          //     var latlngs = [
-          //       [latlang0[1], latlang0[0]],
-          //       [latlang1[1], latlang1[0]],
-          //     ];
-              
-          //     let polyline = L.polyline(latlngs, {color: 'green'}).addTo(map);
-              
-          //   }
-          // }
         }
       )
 
