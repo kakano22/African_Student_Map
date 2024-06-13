@@ -47177,27 +47177,4 @@
       }
     ]
   },
-  {
-    "type":"FeatureCollection",
-    "features":[
-      {
-        "type":"Feature",
-        "properties":{
-          "id":"00508",
-          "name":"Illegible",
-          "education record_start":"",
-          "education record_end":"",
-          "residence_africa_city":"",
-          "residence_africa_country":""
-        },
-        "geometry":{
-          "coordinates":[
-            "",
-            ""
-          ],
-          "type":"Point"
-        }
-      }
-    ]
-  }
 ]
