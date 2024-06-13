@@ -48,6 +48,11 @@ fetch('/African_Student_Map/data/student_data.json').then(
 //    url: "http://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer"
 //  }).addTo(map);
 
+  var searchLayer = L.layerGroup().addTo(map);
+//... adding data in searchLayer ...
+map.addControl( new L.Control.Search({layer: searchLayer}) );
+//searchLayer is a L.LayerGroup contains searched markers
+
 // Date Slider 
 // https://refreshless.com/nouislider/
 var slider = document.getElementById('slider');
@@ -66,9 +71,4 @@ noUiSlider.create(slider, {
       stepped: true,
       density: 4
     } 
-      
-  var searchLayer = L.layerGroup().addTo(map);
-//... adding data in searchLayer ...
-map.addControl( new L.Control.Search({layer: searchLayer}) );
-//searchLayer is a L.LayerGroup contains searched markers
 });
