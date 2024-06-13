@@ -5663,47 +5663,6 @@
       {
         "type":"Feature",
         "properties":{
-          "id":"00171",
-          "name":"Molief, Alfred",
-          "education record_start":"1914",
-          "education record_end":"1915",
-          "residence_africa_city":"",
-          "residence_africa_country":"South America"
-        },
-        "geometry":{
-          "coordinates":[
-            "-55.491477",
-            "-8.783195"
-          ],
-          "type":"Point"
-        }
-      },
-      {
-        "type":"Feature",
-        "properties":{
-          "institution_1":"Central State College (Wilberforce)",
-          "institution_2":"",
-          "institution_3":"",
-          "name":"Molief, Alfred",
-          "education record_start":"1914",
-          "education record_end":"1915"
-        },
-        "geometry":{
-          "coordinates":[
-            "-83.8777063",
-            "39.716171"
-          ],
-          "type":"Point"
-        }
-      }
-    ]
-  },
-  {
-    "type":"FeatureCollection",
-    "features":[
-      {
-        "type":"Feature",
-        "properties":{
           "id":"00172",
           "name":"Auruku, Samuel",
           "education record_start":"1914",
