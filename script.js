@@ -5,6 +5,10 @@ let map = L.map('map').setView([26.455343409890208, -38.99551264526797], 2.5);
 // Add a base layer to the map 
 // https://leafletjs.com/reference.html#tilelayer
 L.tileLayer(
+  "https://tile.openstreetmap.de/{z}/{x}/{y}.png"
+).addTo(map);
+
+L.tileLayer(
   "https://mapwarper.net/maps/tile/83045/{z}/{x}/{y}.png"
 ).addTo(map);
 
