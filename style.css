@@ -11,3 +11,9 @@ html, body {
   margin-left: 2em;
   height: 100%;
 }
+
+.special-elite-regular {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
