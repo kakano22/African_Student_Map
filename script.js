@@ -8,6 +8,10 @@ L.tileLayer(
   "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
 ).addTo(map);
 
+L.tileLayer(
+  "https://mapwarper.net/maps/tile/83043/{z}/{x}/{y}.png"
+).addTo(map);
+
 // add Africa map
 let imageUrl = '/African_Student_Map/Africa Maps_Bond Collection_cropped.jpg',
     imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
