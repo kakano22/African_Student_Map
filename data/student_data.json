@@ -23818,12 +23818,12 @@
           "education record_start":"1874",
           "education record_end":"",
           "residence_africa_city":"Mende Mission",
-          "residence_africa_country":""
+          "residence_africa_country":"Sierra Leone"
         },
         "geometry":{
           "coordinates":[
-            "-122.3261603",
-            "49.1329272"
+            "-11.779889",
+            "8.460555"
           ],
           "type":"Point"
         }
