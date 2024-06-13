@@ -35,3 +35,23 @@ fetch('/African_Student_Map/data/student_data.json').then(
 //L.esri.tiledMapLayer({
 //    url: "http://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer"
 //  }).addTo(map);
+
+// Date Slider 
+// https://refreshless.com/nouislider/
+var slider = document.getElementById('slider');
+
+noUiSlider.create(slider, {
+    start: [20, 80],
+    connect: true,
+    behaviour: 'tap-drag',
+    tooltips: true,
+    range: {
+        'min': 1848,
+        'max': 1960
+    },
+    pips: {
+      mode: 'steps',
+      stepped: true,
+      density: 4
+    } 
+});
