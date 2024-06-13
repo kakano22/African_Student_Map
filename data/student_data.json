@@ -23380,29 +23380,6 @@
       {
         "type":"Feature",
         "properties":{
-          "id":"00720",
-          "name":"Illegible--someone who married Josephine Hunter, Jan 18, 1908",
-          "education record_start":"",
-          "education record_end":"",
-          "residence_africa_city":"",
-          "residence_africa_country":""
-        },
-        "geometry":{
-          "coordinates":[
-            "",
-            ""
-          ],
-          "type":"Point"
-        }
-      }
-    ]
-  },
-  {
-    "type":"FeatureCollection",
-    "features":[
-      {
-        "type":"Feature",
-        "properties":{
           "id":"00911",
           "name":"Adjahoe, Alfred A.",
           "education record_start":"1922",
@@ -45526,47 +45503,6 @@
           "name":"Sondezi, Albert M.",
           "education record_start":"1916",
           "education record_end":"1917"
-        },
-        "geometry":{
-          "coordinates":[
-            "-83.8777063",
-            "39.716171"
-          ],
-          "type":"Point"
-        }
-      }
-    ]
-  },
-  {
-    "type":"FeatureCollection",
-    "features":[
-      {
-        "type":"Feature",
-        "properties":{
-          "id":"00945",
-          "name":"Molief, Alfred",
-          "education record_start":"1914",
-          "education record_end":"1915",
-          "residence_africa_city":"",
-          "residence_africa_country":"South Africa"
-        },
-        "geometry":{
-          "coordinates":[
-            "22.937506",
-            "-30.559482"
-          ],
-          "type":"Point"
-        }
-      },
-      {
-        "type":"Feature",
-        "properties":{
-          "institution_1":"Wilberforce University",
-          "institution_2":"",
-          "institution_3":"",
-          "name":"Molief, Alfred",
-          "education record_start":"1914",
-          "education record_end":"1915"
         },
         "geometry":{
           "coordinates":[
